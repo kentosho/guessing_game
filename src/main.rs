@@ -14,7 +14,10 @@ fn main() {
         io::stdin()
             .read_line(&mut guess)
             .expect("Failed to read line");
-        let guess: u32 = guess.trim().parse()
+        let guess: u32 = guess.trim().parse(){
+            Ok(num) => num,
+            Err(_) => continue,
+            }
             .expect("Please type a number!");
 
         println!("You guessed: {}", guess);
